@@ -1,0 +1,9 @@
+node {
+    stage('Git clone') {
+git branch: 'main', url: 'https://github.com/Yuvasree-R/java.git'
+    }
+    stage('Execute java') {
+bat '''javac Add.java
+java Add'''
+    }
+}
