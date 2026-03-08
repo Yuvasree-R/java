@@ -25,6 +25,11 @@ pipeline {
                 bat 'echo Deploy stage'
             }
         }
+        post {
+            success{
+                bat 'echo "build successful"'
     }
+            failure {
+                bat 'echo "build failure"'
 }
     
