@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/Yuvasree-R/java.git'
@@ -25,14 +26,16 @@ pipeline {
                 bat 'echo Deploy stage'
             }
         }
-        post {
-            success{
-                bat 'echo "build successful"'
+
     }
-            failure {
-                bat 'echo "build failure"'
-}
+
+    post {
+        success {
+            bat 'echo Build Successful'
+        }
+
+        failure {
+            bat 'echo Build Failed'
         }
     }
 }
-    
