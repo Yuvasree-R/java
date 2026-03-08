@@ -32,4 +32,7 @@ pipeline {
             failure {
                 bat 'echo "build failure"'
 }
+        }
+    }
+}
     
