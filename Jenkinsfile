@@ -2,10 +2,26 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Checkout Code') {
             steps {
-                echo 'Hello World'
+                git 'https://github.com/Yuvasree-R/java'
             }
         }
+        stage('Build'){
+            steps{
+                sh 'echo "building the app"'
+            }
+}
+         stage('Test'){
+            steps{
+                sh 'echo "Running tests"'
+            }
+}
+                 stage('Deploy'){
+            steps{
+                sh 'echo "Deploying"'
+            }
+}
     }
 }
+    
