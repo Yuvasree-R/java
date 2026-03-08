@@ -7,21 +7,24 @@ pipeline {
                 git 'https://github.com/Yuvasree-R/java.git'
             }
         }
-        stage('Build'){
-            steps{
-                sh 'echo "building the app"'
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean install'
             }
-}
-         stage('Test'){
-            steps{
-                sh 'echo "Running tests"'
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
             }
-}
-                 stage('Deploy'){
-            steps{
-                sh 'echo "Deploying"'
+        }
+
+        stage('Deploy') {
+            steps {
+                bat 'echo Deploy stage'
             }
-}
+        }
     }
 }
     
